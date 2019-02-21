@@ -11,4 +11,4 @@ Head over to [pelicanjoe.com](https://www.pelicanjoe.com/) to view the deploymen
 
 ## Components: High-Level Overview  
 
-Hugo **+** GitHub **+** Travis CI **+** AWS (S3, CloudFront + IAM + ACM)  
+**Hugo** + **GitHub** + **Travis CI** + **AWS** *(S3, CloudFront, IAM, ACM)*  
