@@ -1,15 +1,19 @@
 ---
-title: "WordPress on MAMP"
-date: 2019-03-18T14:25:32-05:00
+title: "MAMP WP"
+date: 2019-03-18T14:58:37-04:00
 ---
 
-# Install and Run WordPress on MAMP  
+# MAMP & WordPress  
+
+***  
+
+## Install and Run WordPress on MAMP  
 
 Installing and running WordPress on a local machine can be an essential practice before deploying your project, as well as after your project is deployed.  
 
 You can mirror an entire project (site file and database) using MAMP. This can be extremely useful when you need to test new functionalities or troubleshoot issues. By testing locally with MAMP, you don't need to worry about breaking a *live* project, or worry about an Internet connection.  
 
-# What is MAMP?  
+## What is MAMP?  
 
 MAMP installs an **AMP stack** on your computer.  
 
