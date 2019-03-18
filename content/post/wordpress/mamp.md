@@ -1,6 +1,6 @@
 ---
 title: "WordPress on MAMP"
-date: 2019-03-18T16:57:32-05:00
+date: 2019-03-18T14:25:32-05:00
 ---
 
 # Install and Run WordPress on MAMP  
