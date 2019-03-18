@@ -16,10 +16,6 @@ You can mirror an entire project (site file and database) using MAMP. This can b
 ## What is MAMP?  
 
 MAMP installs an **AMP stack** on your computer.  
-
-* AMP  
-    - A: Apache --> Web Server
-    - M: MySQL  --> Relational Database  
-    - P: PHP  --> Scripting Language  
+<img src="/images/AMP-STACK2.png" alt="ampstack" style="width: 900px;"/>  
 
 MAMP is an install package that sets up all the components of the AMP stack and links them together, so you can use them. After MAMP is installed, you have a local web server on your machine you can access through your web browser without an Internet connection.  
