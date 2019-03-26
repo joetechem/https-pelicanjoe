@@ -1,7 +1,6 @@
 ---
 title: "Intro to Azure"
 date: 2019-03-26T12:05:16-04:00
-draft: true
 ---  
 
 Abstract: Starting a basic overview of Azure, beginning with resiliency and availability.  
