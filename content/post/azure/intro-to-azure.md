@@ -3,7 +3,16 @@ title: "Intro to Azure"
 date: 2019-03-26T12:05:16-04:00
 ---  
 
-Abstract: Starting a basic overview of Azure, beginning with resiliency and availability.  
+Abstract: Basic overview of Azure.  
+
+### Contents:  
+
+* Regions  
+* Resiliency & Availability  
+
+## Regions  
+
+Global Footprint: 36 generally available Regions, with 8 more coming soon.  
 
 ## Resiliency & Availability  
 
@@ -11,6 +20,7 @@ Abstract: Starting a basic overview of Azure, beginning with resiliency and avai
 * Not resilient to failure  
 
 #### Availability Set  
+* **Portects against local hardware failures**  
 * Resilient to failure  
     - consists of two or more forte domains that share a common power source, network switch  
     - enables you to protect against localized hardware failures within an Azure Region.  
@@ -19,10 +29,11 @@ Abstract: Starting a basic overview of Azure, beginning with resiliency and avai
     - So, this help protect against failure within the data center  
 
 #### Availability Zones  
+* **Protects against data center failures**  
 * For an extra level of availability, and to help protect against specific data center failures, there is **Availability Zones** --different data centers within a geographical area.  
 
 #### Paired Regions (Regional Pairs)  
-* Protects against regional outage  
+* **Protects against regional outage**  
     - You can deploy an application across multiple Regions
     - And you can use Azure Traffic Manager to distribute Internet traffic into those different Regions  
 * Each Azure Region is *paired* with another single Region
@@ -70,5 +81,13 @@ Let's you want to deploy, manage, and monitor reources as a group --Azure Resour
     - JSON files which defines one or more resources to deploy to a Resource Group (i.e. templating out the infrasructure to the cloud as code, in a JSON document)  
     - Defines the dependencies between the deployed resources, so it knows which of those relies on the others as well)  
     - These templates can be used to deploy resources in a conistent and repeatable fashion  
+
+### Resource Template Manager is Similar to AWS CloudFormation, but...  
+* Azure Resource Manager is the underlying service for deploying and managing Azure resources  
+
+* AWS CloudFormation is purely a templating engine and state-mgmt service, so if you make changes outside of the CloudFormation, it is not reflected back in the template.  
+    - Whereas, in Azure Resource Template Manager,  you can go to any resources you've deployed within the Azure Portal, and you can generate a template from them at a specific point.  
+
+
 
 
