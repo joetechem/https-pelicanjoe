@@ -92,9 +92,20 @@ Let's you want to deploy, manage, and monitor reources as a group --Azure Resour
 
 ***  
 
-# Compute  
+
+# Compute Services  
 
 Compute Services Azure Offers:  
+* **Virtual Machines**  
+* **App Service**  
+* **Functions**  
+* **Batch**  
+* **Container Service**  
+* **Container Instances**  
+* **Service Fabric**  
+* **Cloud Services** *(Classic)*    
+
+Overview of each Azure Compute service:  
 
 ## Virtual Machines (Think Amazon EC2)  
 * Windows and Linux machines on-demand  
@@ -140,3 +151,73 @@ Compute Services Azure Offers:
 
 * Various *App Service Plans* 
     - from Free to Isolated Environments  
+    
+## Azure Functions  
+
+* Serverless Compute - Run code on demand  
+* Function as a Service (FaaS)  
+    - Google: Cloud Functions  
+    - AWS: Lambda  
+    
+* Execute code in response to events or Triggers  
+* Only pay when your code is executed (cost-effective)  
+* C#, F#, JavaScript, Java (Preview)  
+* Part of App Service and can run within an App Service Plan  
+* First 1 million executions/mth are free  
+
+## Batch  
+
+* Managed Service for batch processing jobs  
+* Used for running large scale parallel and HPC workloads efficiently  
+* Scale processes to as many compute cores as required  
+* Supports both Windows and Linux compute nodes  
+* Batch is free.  
+    - Just pay for the resurces your job consumes  
+    
+## Container Service  
+
+* Managed Kubernetes Container Orchestration (AKS = Azure Kubernetes Service)  
+    - Kubernetes: open source container orchestration developed at Google for orchestrating containers in a cluster env for large-scale microservice applications  
+    
+* Auto upgrades and patching (managed operation)  
+    - simply spin up a Kubernetes cluster with one command or in portal, then go ahead and deploy your containers here  
+    
+* Support for other orchestrators (but not managed)  
+    - DC/OS, Un-managed Kubernetes, Docker  
+* Pay only for the agent nodes, not the servers (cost-effective)  
+
+* Similar to AWS EC2 Container Service or AWS Fargate  
+
+## Container Instances  
+
+* Containers as a Service (CaaS)  
+
+So if you have a small application that runs in a container, and you want to make it available, you can use: azure container instances  
+* Fast and Easy way to run a container in Azure  
+* Useful for applications that can run in isolated containers  
+* Containers get a public IP address  
+* Can design the container spec yourself (CPU/RAM)  
+* Supports both Windows and Linux based containers  
+* Per-second billing ( as apposed to per-minute billing with VMs)  
+    - If you have a simple app that you want to run, you can package it up as a conatiner and run it in Azure Container Instances  
+* Not ideal for all use cases but definitely handy!  
+
+## Service Fabric  
+
+* Platform for running microservices and containers  
+* Used by a lot of Azure and MS services  
+    - Sype for Business, Cortana, CosmosDB, Dynamics 365  
+* Can run anywhere, other clouds, on premises. SDK is identical.  
+* Supports STATEFUL and STATELESS micro services  
+* Popular amongst the .NET community, but supports other languages and containers too  
+* Utilizes high density container architecure for scale and performance  
+    - you can have thousands of containers running on a small number of nodes  
+    - efficient for performance and able to scale nicely  
+    
+## Cloud Services  
+
+* Original PaaS Offering from Azure  
+* Similar to App Service, but you can remote into the VMs (and install your own software too)  
+* Web Roles - Websites  
+* Worker Roles - Async processing  
+* Recommended to use App Service instead of "Classic" Cloud Services  
