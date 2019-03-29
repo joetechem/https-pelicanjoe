@@ -92,8 +92,7 @@ Let's you want to deploy, manage, and monitor reources as a group --Azure Resour
 
 ***  
 
-
-# Compute Services  
+# Compute  
 
 Compute Services Azure Offers:  
 * **Virtual Machines**  
@@ -221,3 +220,7 @@ So if you have a small application that runs in a container, and you want to mak
 * Web Roles - Websites  
 * Worker Roles - Async processing  
 * Recommended to use App Service instead of "Classic" Cloud Services  
+
+***  
+
+# Storage  
