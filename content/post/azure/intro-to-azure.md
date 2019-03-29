@@ -7,8 +7,10 @@ Abstract: Basic overview of Azure.
 
 ### Contents:  
 
-* Regions  
-* Resiliency & Availability  
+* [Regions](#Regions)  
+* [Resiliency & Availability](#Resiliency-&-Availability)
+* [Compute](#Compute)  
+* [Storage](#Storage)  
 
 ## Regions  
 
@@ -88,6 +90,53 @@ Let's you want to deploy, manage, and monitor reources as a group --Azure Resour
 * AWS CloudFormation is purely a templating engine and state-mgmt service, so if you make changes outside of the CloudFormation, it is not reflected back in the template.  
     - Whereas, in Azure Resource Template Manager,  you can go to any resources you've deployed within the Azure Portal, and you can generate a template from them at a specific point.  
 
+***  
 
+# Compute  
 
+Compute Services Azure Offers:  
 
+## Virtual Machines (Think Amazon EC2)  
+* Windows and Linux machines on-demand  
+* Endorsed Linux Distros:  
+    - CentOS  
+    - CoreOS  
+    - Debian  
+    - Oracle Linux  
+    - RHEL  
+    - SUSE LES  
+    - openSUSE  
+    - Ubuntu  
+* You can bring your own distribution to virtual machines, but they will not be *supported*  
+
+* 6 Types of Virtual Machines with 28 Families  
+* Set amount of vCPUs, Memory, and Temporary Storage  
+* Can attach disks  
+    - for any persistent data, store on disks  
+* Granular Billing  
+* Per Minute Billing  
+* Reserved VM Instances gives a sginificant discount  
+
+## App Service  
+
+* Platform as a Service  
+    - Just upload your code  
+* Completely Managed Service  
+    - All you need to worry about is your application code  
+
+* Supported Languages:  
+    - .NET  
+    - .NET Core  
+    - Java  
+    - Ruby  
+    - Node.JS  
+    - PHP  
+    - Python  
+* Varied number of *types* of applications in App Services  
+    - Web Apps + APIs + Mobile Backends + Containers  
+
+* Windows & Linux  
+    - choose what you want to run *under the hood*  
+
+* Various *App Service Plans* 
+    - from Free to Isolated Environments  
