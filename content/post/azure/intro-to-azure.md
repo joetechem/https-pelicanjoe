@@ -185,7 +185,7 @@ Overview of each Azure Compute service:
     - DC/OS, Un-managed Kubernetes, Docker  
 * Pay only for the agent nodes, not the servers (cost-effective)  
 
-* Similar to AWS EC2 Container Service or AWS Fargate  
+*Similar to AWS EC2 Container Service or AWS Fargate*  
 
 ## Container Instances  
 
@@ -224,3 +224,144 @@ So if you have a small application that runs in a container, and you want to mak
 ***  
 
 # Storage  
+
+***  
+
+# Networking  
+
+Networking Services Azure Offers:  
+* **Virtual Networks**  
+* **Load Balancer**  
+* **Application Gateway**  
+* **VPN Gateway**  
+* **Azure DNS**  
+* **Traffic Manager**  
+* **CDN**  
+* **Express Route**  
+
+## Virtual Networks  
+
+(VNETs)  
+
+* Isolated Network within Azure  
+* Hosts your VMs, VM Scale Sets or App Service Environments  
+* Compsoed of Subnets  
+* User Defined Routes  
+* Security Groups  
+* Outbound Internet Access  
+* VNET Peering  
+* Service Endpoints  
+    - ennables you to access services from within your private VNET  
+    - e.g. place an endpoint of your Azure Blob Store (an object store) within your VNET, and access them from within the VNET via private connection  
+    
+VNETS are basically a construct giving you an isolated network to host your infrastrucure resources  
+
+*Similar to AWS VPC*  
+
+## Load Balancer  
+
+* Basic Load Balancer functionality for your VMs  
+* Operates at Layer 4  
+* Public or Internal  
+* HTTP or TCP based probes (not just limtied to web traffic)  
+* Hash based load balancing to balance the load  
+* Standard Load Balancer is in preview (FEB 2018)  
+    - HA Ports  
+    - AZ Aware  
+    
+*Similar to AWS ELB (Elastic Load Balancer)*  
+
+## Application Gateway  
+
+*more advanced load balancer*
+
+* Layer 7 Balancing in Azure  
+
+* HTTP Based Round Robin  
+    - Just supports web traffic  
+
+* SSL Offload  
+    - offload certificates here and have private connections behind the Application Gateway  
+* Cookie Based Session Affinity  
+    - so you can maintain state for a user between their connection and a single VM on the back  
+* Web Socket Support  
+    - push data back to a specific client within a browser  
+* Integrated Web Application Firewall  
+* Internal/External Load Balancing support  
+
+*Similar to the new AWS ELB*  
+
+## VPN Gateway  
+
+Enable you to establish private connections between on-premises environment to the coud and connection within the cloud  
+
+* Managed VPN in the cloud  
+* Site to Site (S2S)  
+* Point to Site (P2S)  
+    - enabling individual computers to connect to VMs running in Azure  
+    - not offered elsewhere (currently)  
+* Establish encrypted connections  
+    - Azure --> On Premises  
+    - Azure --> Azure (Multi-Region setups)  
+* One VPN Gateway per VNET  
+    - Multiple Connections per VPN Gateway  
+* Policy Based (Static)  
+    - where you define a policy in an Access Control List to say where you want your data or packets to route across the VPN
+* Route Based (Dynamic)  
+    - Looks at the Route Tables in the VNET and decides from there where to direct traffic  
+    
+*Similar to AWS VPN Gateway*  
+
+You can connect your AWS VPN Gateway to your Azure VPN Gateway  
+
+## Azure DNS  
+
+* Domain Name System  
+* Host your DNS Domains  
+* Utilize the same crfedentials as your infrastructure  
+* Cannot purchase domain names here  
+* Pay per zone per month, then per million queries  
+* Private domains in preview  
+
+*Similar to Route53*  
+
+## Traffic Manager  
+
+* Global traffic router  
+    - Internal or External endpoints  
+* Uses DNS to select the best available endpoint  
+* Azure and External endpoints  
+* 4 trafffic routing methods  
+    - Priority  
+    - Weighted  
+    - Performance  
+    - Geographic  
+* Customized Health Checks  
+* Routing method and health determine where traffic goes  
+* **Can be used for multi-region architectures**  
+
+*Similar to AWS Route53*  
+
+## Content Delivery Network (CDN)  
+
+* Improve performance by getting data closer to users  
+* Typically used for static assets (images, media, stylesheets, etc)  
+* Dynamic Site Acceleration (DSA)  
+* Service provided by Akamai and Verizon  
+* Standard and Premium option avialable (Verizon only)  
+* Pay per Gb outbound per month. --varies based on zone.  
+
+Similar to AWS CloudFront  
+
+## Express Route  
+
+* Gives you a private connection into Azure  
+* dedicated link, up to 10Gbps  
+* Replace VPNs  
+* Two Connection Options  
+    - Private Link to an Exchange Provider Facility  
+    - Add an ExpressRoute link to your MPLS network  
+* Multiple subscriptions can be linked to a single circuit  
+* Hybrid and Disastor Recovery  
+
+*Similar to AWS Direct Connect*  
