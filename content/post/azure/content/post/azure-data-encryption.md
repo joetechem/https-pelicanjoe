@@ -21,7 +21,7 @@ Azure Disk Encryption is available on VMs that meet these minimum memory require
 | Windows VMs     | 2GB                        |  
 | Linux VMs, encrypting data volumes only | 2 GB |  
 | Linux VMs, encrypting both data and OS volumes, and where the root file system usage is 4GB or less | 8 GB |  
-| Linux VMs when encrypting both data and OS volumes; where the root file system usage greater than 4GB | The file system usage * 2. For instance, a 16 GB of root file system usage requires at least 32GB of RAM |  git 
+| Linux VMs, encrypting both data & OS volumes; where the root file system usage greater than 4GB | The file system usage * 2. For instance, a 16 GB of root file system usage requires at least 32GB of RAM |  git 
 
 Once the OS disk encryption process is complete on Linux virtual machines, the VM can be configured to run with less memory.  
 
