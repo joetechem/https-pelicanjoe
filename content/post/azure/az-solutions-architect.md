@@ -92,6 +92,7 @@ Azure supports 3 approaches to deploying cloud resources:
 
 Selecting between them will change several factors of the services you move into Azure inlcuding cost, maintenance requirements, and security. It is important to make an informed descision on which model to leverage for your services. We will also look at the Azure supported service models, which will help in determining the services you should start with when planning out an Azure deployment.  
 
+<img src="/images/2-cloud-deployment.png" alt="cloud deployment types" style="width: 305px;">  
 
 ![test](/static/images/2-cloud-deployment.png)  
 
@@ -165,4 +166,6 @@ Examples of why you'd use hybrid cloud:
 * **Unique operating environment:** Public cloud can't replicate a legacy operating environment.  
 
 * **Migration:** Move workloads to the cloud over time.  
+
+## Service Models  
 
