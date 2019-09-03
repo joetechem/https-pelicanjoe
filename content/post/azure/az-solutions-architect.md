@@ -173,4 +173,13 @@ Cloud computing resources are delivered using three different service models.
 **Platform as a service (PaaS)** provides ready-made development and deployment environments that you can use to deliver your own cloud services.  
 **Software as a service (SaaS)** delivers applications over the Internet as a web-based service.  
 
+When choosing a service model, consider which party should be responsible for the computing resource. Depending on your scenarion, you can decide how much shared management responsibility you want. The following displays a list of resources you manage and your service provider manages in each cloud service category.  
 
+
+<img src="/images/3-shared-responsibility.png" alt="responsbilities" style="width: 531px;">  
+
+#### Infrastructure as a Service (IaaS):  
+- instant computing infrastructure, provisioned and managed over the Internet.   
+- IaaS enables you to quickly scale resources to meet demand and only pay for what you use.  
+- IaaS avoids the expense and complexity of buying and managing your own physical servers and other datacenter infrastructure.  
+- Each resource is offered as a separate service component, and you rent the resource as long as you need it.  
