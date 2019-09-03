@@ -1,6 +1,7 @@
 ---
 title: "Az Solutions Architect"
 date: 2019-08-30T18:18:26-04:00
+category: azure
 ---
 
 compute, network, storage, security  
