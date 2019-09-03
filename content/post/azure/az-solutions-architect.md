@@ -99,15 +99,15 @@ Selecting between them will change several factors of the services you move into
     - services offered over the public internet and available to whoever wants to purchase them  
     - cloud resources (servers, storage, etc) are owned and operated by a 3rd party cloud service provider and delivered over the internet.  
     - Services may be free or sold on demand  
-        - allows customers to pay only per suage for the CPU cycles, storage, or bandwidth they consume  
+        - allows customers to pay only per usage for the CPU cycles, storage, or bandwidth they consume  
 
 * Why public cloud?  
-    - can be deployed faaster than on-premises infrastructures and with an almost infitiely scalable platform  
+    - can be deployed faster than on-premises infrastructures and with an almost infinitely scalable platform  
     - every employee of a company can use the same application from any office or branch using their device of choice via the internet  
 
 Examples of why you'd use the public cloud:  
 
-* **Sevice consumption through on-demand or subscription model:** The on-demand or subscription model allows you to pay for the portion of CPU, storage, and other resources that you use or reserve.  
+* **Service consumption through on-demand or subscription model:** The on-demand or subscription model allows you to pay for the portion of CPU, storage, and other resources that you use or reserve.  
 
 * **No up-front investment of hardware:** No requirement to purchase, manage, and maintain on-premises hardware and application infrastructure. The cloud service provider is held responsible for all management and maintenance of the system.  
 
