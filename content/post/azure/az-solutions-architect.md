@@ -225,4 +225,14 @@ other common scenarios:
 **Increase stability, reliability, and supportability:** With IaaS, there’s no need to maintain and upgrade hardware or troubleshoot equipment problems. With the appropriate agreement in place, the service provider assures that your infrastructure is reliable and meets SLAs.  
 
 ## Platform as a Service (PaaS):  
-- 
+- a complete development and deployment environment in the cloud  
+- you purchase the resources from a cloud service provider on a pay-as-you-go basis and access them over a secure Internet connection  
+- Like IaaS, PaaS includes infrstructure such as servers, storage, and networking.  
+- In addition, it also includes middleware, development tools, and other services.  
+
+PaaS supports the complete web application lifecycle: building, testing, deploying, managing, and updating.  
+
+PaaS removes the need to manage software licenses, middleware, and infrastructure of the services.  
+
+You manage the applications and services you develop, and the cloud service provider typically manages everything else.  
+
