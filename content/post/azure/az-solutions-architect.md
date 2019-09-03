@@ -94,8 +94,6 @@ Selecting between them will change several factors of the services you move into
 
 <img src="/images/2-cloud-deployment.png" alt="cloud deployment types" style="width: 305px;">  
 
-![test](/static/images/2-cloud-deployment.png)  
-
 * Public Cloud   
     - most common  
     - services offered over the public internet and available to whoever wants to purchase them  
@@ -167,5 +165,12 @@ Examples of why you'd use hybrid cloud:
 
 * **Migration:** Move workloads to the cloud over time.  
 
-## Service Models  
+# Service Models  
+
+Cloud computing resources are delivered using three different service models.  
+
+**Infrastructure-as-a-service (IaaS)** provides instant computing infrastructure that you can provision and manage over the Internet.  
+**Platform as a service (PaaS)** provides ready-made development and deployment environments that you can use to deliver your own cloud services.  
+**Software as a service (SaaS)** delivers applications over the Internet as a web-based service.  
+
 
