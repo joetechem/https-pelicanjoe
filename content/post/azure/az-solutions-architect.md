@@ -26,5 +26,26 @@ compute, network, storage, security
 * manage access keys  
 * monitor activity log by using Azure Monitor logs  
 * implement Azure storage replication  
-
-
+#### Create and configure a VM for Windows and Linux  
+* configure high availability  
+* configure monitoring, networking, storage, and virtual machine size  
+* deploy and configure scale sets  
+#### Automate deployment of VMs  
+* Modify Azure Resource Mnager template  
+* configure location of new VMs  
+* configure VHD template  
+* deploy from template  
+* save a deployment as an Azure Resource Manager template  
+* deploy Windows and Linux VMs  
+#### Implement solutions that use virtual machines (VMs)  
+* provision VMs  
+* create Azure Resource Manager templates  
+* configure Azure Disk Encryption for VMs  
+#### Create connectivity between virtual networks  
+* create and configure VNET peering  
+* create and configure VNET to VNET  
+* veriy virtual network connectivity  
+* create virtual network gateway  
+#### Implement and manage virtual networking  
+* configure private and public IP addresses, network routes, network interface, subnets, and virtual network  
+#### Manage Azure Directory
