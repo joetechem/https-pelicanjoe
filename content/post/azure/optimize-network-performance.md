@@ -60,4 +60,8 @@ Azure Traffic Manager could help. Traffic Manager is a DNS-based load balancer t
 
 * **Geographic** - You could set up geographical regions for front-end deployments, routing your users based upon data sovereignty manadates or localization content.  
 
-Traffic Manager profiles can also be nested. You could first route your users across different geographies
+Traffic Manager profiles can also be nested. You could first route your users across different geographies (for example, Europe and Australia) using geographic routing and then route them to local fornt-end deployments using the performance routing method.  
+
+Consider that the same heatlhcare company has deployed a web front end in West Europe and Australia. Assume they have deployed Azure SQL Database with their primary deployment in West Europe, and a read replica in Australia East. Let's also assume the applciation can connect to the local SQL instance for read queries.  
+
+The team deploys a Traffic Manager instance in performance mode and adds the two front-end instances as Traffic Manager profiles. As an end user, you navigate to a custom domain name (for example, healthcarecompany.com) which routes to Traffic Manager.  
