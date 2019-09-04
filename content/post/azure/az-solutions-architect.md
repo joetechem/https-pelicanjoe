@@ -299,4 +299,12 @@ Cloud computing resources are delivered using three different service models:
 
 3. Software as a service (or SaaS) delivers applications over the Internet as a web-based service.  
 
+***  
 
+# Control Azure Services with CLI  
+
+Looking at a scenario:  
+
+You work at a company that develops Azure Web Apps. These are applications hosted in Azure, with all the benefits of automatically configured security, load balancing, management, and so on. You're currently testing a web app that generates sales forecasts, based on a range of inputs from different databases and other data sources. Your developers use Windows, linux, and Mac computers, and use GitHub for daily builds of the applications.  
+
+As part of the testing, you want to compare app performance for different data sources, and 
