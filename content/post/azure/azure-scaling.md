@@ -95,3 +95,12 @@ A common pattern is to externalize state to another service like Redis Cache or 
 So we know that the load on an application can vary over time. While we could use autoscaling to add capacity, we could also use a throttling mechanism to limit the number of requests from a source. We can safegaurd performance limits by putting known limits into place at the application level, preventing the application from breaking. Throttling is most frequently used in applications exposing API endpoints.  
 
 Once the application has identified that it would breach a limit, throttling could begin an densure the overall system SLA isn't breached. For example, if we exposed an API for customers to get data, we could limit the number of requests to 100 per minute. If any single customer exceeded thsi limit, we could respond with an HTTP 429 status code, including the wait time before another request can be successfully submitted.  
+
+## Serverless  
+
+Serveless computing provides a cloud-hosted execution environment that runs your apps; however, the underlying environment is completely abstracted. You create an instance of the service, and you add your code; no infrastructure management or maintenance is required, or even allowed.  
+
+You cnofigure your serverless apps to respond to events. This could be a REST endpoint, a timer, or a message received from another Azure service. THe serverless app runs only when it's triggered by an event.  
+
+Infrastructure is not your responsibility. Scaling and preformance are handled automatically, and you are billed only for the exact resources you use. There's no need to even reserve capacity. Azure Functions, Azure Container Instances, and Logic Apps are all examples of serverless computing available on Azure.  
+
