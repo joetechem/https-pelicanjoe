@@ -104,3 +104,28 @@ You cnofigure your serverless apps to respond to events. This could be a REST en
 
 Infrastructure is not your responsibility. Scaling and preformance are handled automatically, and you are billed only for the exact resources you use. There's no need to even reserve capacity. Azure Functions, Azure Container Instances, and Logic Apps are all examples of serverless computing available on Azure.  
 
+## Containers  
+
+Containers is a mthod for unning applications in a virtualized environment. A virtual machine is virtualized at the hardware level, where a hypervisor makes it possible to run multiple virtualized operating systems on a single physical server. Containers take the virtualization up a level. The virtualization is done at the OS level, making it possible to run multiple identical application instances within the same OS.  
+Containers are well suited to scale-out scenarios. They are meant to be lighweight and are designed to be created, scaled out, and stopped dynamically as environment and demand change.  
+
+A benefit of using containers is the ability to run mulitple isolated applications on each virtual machine. Since containers themselves are secured and isolated at a kernel level, you don't necessarily need separate VMs for separate workloads.  
+
+While you can run containers on virtual machines, there are a couple of Azure services that fouc on easing the management and scaling of containers:  
+
+* **Azure Kubernetes Service (AKS)**  
+    - Allows you to set up virtual machines to act as your nodes  
+    - Azure hosts the Kubernetes management plane and only bills for the running worker nodes that host your containers  
+    - to increase the number of your worker nodes in Azure, you could use the Azure CLI to increase manually  
+    - at time of writing, there is a preview of Cluster Autoscaler on AKS available that enables autoscaling of your worker nodes  
+    - On your you Kubernetes cluster, you could use the Horizontal Pod Autoscaler to scale out the number of instances of the container to be deployed.  
+    - AKS can also scale with the Virtual Kubelet described below...  
+
+* **Azure Container Instances (ACI)**  
+    - a serverless approach that lets you create and execute containers on demand  
+    - you are charged only for the execution time per second  
+    - You can use Virtual Kubelet to connect Azure Container Instances into your Kubernetes environment, including AKS.  
+    - With Virtual Kubelet, when your Kubernetes cluster demands additional container instances, those demands can be met from ACI.  
+    - Since ACI is severless, there is no need to ahve reserved capacity. Therefore, you can take advantage of the control and flexibility of Kubernetes scaling with the per-second-billing of serverless.  
+
+
