@@ -307,4 +307,151 @@ Looking at a scenario:
 
 You work at a company that develops Azure Web Apps. These are applications hosted in Azure, with all the benefits of automatically configured security, load balancing, management, and so on. You're currently testing a web app that generates sales forecasts, based on a range of inputs from different databases and other data sources. Your developers use Windows, linux, and Mac computers, and use GitHub for daily builds of the applications.  
 
-As part of the testing, you want to compare app performance for different data sources, and 
+As part of the testing, you want to compare app performance for different data sources, and for different types of data connections. You've noticed that when your development team uses the Azure Portal to create a new test instance of the app, they don't always use exactly the same parameters. You plan to solve this problem by using a set of standard deployment commands for each app test, which can be automated if required, and which will work in the same way across all the computers used by your software team.  
+
+Here, we'll look out how to manage Azure resources using the Azure CLI.  
+
+## What is Azure CLI?  
+
+Azure CLI is a command-line program to connect to Azure and execute admin commands on Azure resources. It can be used interactively or scripted.  
+
+For example, to restart a virtual machine (VM), you would use a command like this:  
+```Powershell  
+az vm restart -g MyResourceGroup -n MyVm  
+```  
+
+To automate repetitive tasks, you assemble the CLI commands into a shell script using the script syntax of your chosen shell and then execute the script.  
+
+### Using Azure CLI in scripts  
+
+If you want to use the Azure CLI commands in scripts, you need to be aware of any issues around the "shell" or environment used for running the script. For example, in a bash shell, the following syntax is used when setting variables:  
+
+```Powershell  
+variable="value"
+variable=integer
+```  
+
+If you use a PowerShell environment for running Azure CLI scripts, you'll need to use this syntax for variables:  
+
+```Powershell  
+$variable="value"
+$variable=integer
+```  
+
+## Working with Azure CLI  
+
+The Azure CLI lets you type commands and execute them immediately from the command line. Recall that the overall goal in the software development example is to deploy new builds of a web app for testing. Let's talk about the sorts of tasks you can do with the Azure CLI.  
+
+## What Azure resources can be managed using the Azure CLI?  
+
+The Azure CLI lets you control nearly every aspect of every Azure resource. You can work with resource groups, storage, virtual machines, Azure Active Directory (Azure AD), containers, machine learning, and so on.  
+
+Commands in the CLI are structured in *groups* and *subgroups*. Each group represents a service provided by Azure, and the subgroups divide commands for these services into logical groupings. For example, the `storage group` contains subgroups including **account**, **blob**, **storage**, and **queue**.  
+
+So, how do you find the particular commands you need? One way is to use `az find`, the AI robot that uses the Azure documentation to tell you more about commands, the CLI and more.  
+
+Example - find the most popular commands related to the word **blob**.  
+
+```Powershell  
+az find blob
+```  
+
+Example - Show me the most popular commands for an Azure CLI command group, such as `az vm`.  
+
+```Powershell  
+az find 'az vm'
+```  
+
+Example - Show me the most popular parameters and subcommands for an Azure CLI command.  
+
+```Powershell  
+az find 'az vm create'
+```  
+
+If you already know the name of the command you want, the `--help` argument for that command will get you more detailed information on the command, and for a command group, a list of the available subcommands. So, with our storage example, here's how you can get a list of the subgroups and commands for managing blob storage:  
+
+```Powershell  
+az storage blob --help
+```  
+
+## How to create an Azure Resource  
+
+When creating a new Azure resource, there are typically three steps: connect to your Azure subscription, create the resource, and verify that creation was successful. The following illustration shows a high-level overview of the process.  
+
+<img src="/images/4-create-resources-overview.png" alt="create-resources" style="width: 345px;">  
+
+Each step corresponds to a different Azure CLI command.  
+
+#### Connect:  
+```Powershell  
+az login
+```  
+
+The Azure CLI will typically launch your default browser to open the Azure sign-in page. If this doesn't work, follow the command-line instructions and enter an authorization code at https://aka.ms/devicelogin.  
+
+After a successful sign in, you'll be connected to your Azure subscription.  
+
+#### Create:  
+
+You'll often need to create a new resource group before you create a new Azure service, so we'll use resource groups as an example to show how to create Azure resources from the CLI.
+
+The Azure CLI `group create` command creates a resource group. You must specify a name and location. The name must be unique within your subscription. The location determines where the metadata for your resource group will be stored. You use strings like "West US", "North Europe", or "West India" to specify the location; alternatively, you can use single word equivalents, such as westus, northeurope, or westindia. The core syntax is:  
+
+```Powershell  
+az group create --name <name> --location <location>
+```  
+
+#### Verify:  
+
+For many Azure resources, the Azure CLI provides a `list` subcommand to view resource details. For example, the Azure CLI `group list` command lists your Azure resource groups. This is useful here to verify whether creation of the resource group was successful:  
+
+```Powershell  
+az group list
+#To get a more concise view, you can format the output as a simple table:
+az group list --output table
+```  
+
+## Exercise - Create an Azure website using CLI  
+
+Next, let's use the Azure CLI to create a resource group, and then to deploy a web app into this resource group.  
+
+### Using a resource group  
+
+When you're working with your own machine and Azure subscription, you'll need to first sign in to Azure using the `az login` command. However, signing in is unnecessary when you are using the browser-based Cloud Shell environment.  
+
+Next, you would normally create a resource group for all your related Azure resources with an `az group create` command, but for this exercise the following resource group has been created for you: Learn-5d8bc07d-b377-4871-8890-aad8099c4445.  
+
+1. Your first step in this exercise will be to create several variables that you will use in later commands.  
+
+```bash  
+export RESOURCE_GROUP=Learn-5d8bc07d-b377-4871-8890-aad8099c4445
+export AZURE_REGION=[region]
+export AZURE_APP_PLAN=popupappplan-$RANDOM
+export AZURE_WEB_APP=popupwebapp-$RANDOM
+```  
+
+You can ask the Azure CLI to list all your resource groups in a table. There should just be one while you are in the free Azure sandbox.  
+
+```Powershell  
+az group list --output table
+```  
+
+As you do more Azure development, you can end up with several resource groups. If you have several items in the group list, you can filter the return values by adding a `--query option`. Try the following command:  
+
+```Powershell  
+az group list --query "[?name == '$RESOURCE_GROUP']"
+```  
+
+he query is formatted using **JMESPath**, which is a standard query language for JSON requests. You can learn more about this powerful filter language at http://jmespath.org/. We also cover queries in more depth in the **Manage VMs with the Azure CLI module**.  
+
+### Steps to create a service plan  
+
+When you run Web Apps using the Azure App Service, you pay for the Azure compute resources that are used by the app, and the resource costs depend on the App Service plan associated with your Web Apps. Service plans determine the region used for the app datacenter, number of VMs used, and pricing tier.  
+
+Create an App Service plan to run your app. The following command specifies the free pricing tier, but you can run `az appservice plan create --help` to see the other pricing tiers.  
+
+**The name of the app and plan must be unique in all of Azure. The variables that you created earlier will assign random values as suffixes to make sure they're unique. However, if you receive an error when you are creating any resources, you should run the commands listed earlier to reset all of the variables with new random values.**  
+
+```Powershell  
+az appservice plan create --name $AZURE_APP_PLAN --resource-group $RESOURCE_GROUP --location $AZURE_REGION --sku FREE
+```  
