@@ -455,3 +455,20 @@ Create an App Service plan to run your app. The following command specifies the 
 ```Powershell  
 az appservice plan create --name $AZURE_APP_PLAN --resource-group $RESOURCE_GROUP --location $AZURE_REGION --sku FREE
 ```  
+
+***  
+
+# Predict Costs and Optimize Spending for Azure  
+
+* What will this solution cost this fiscal year?  
+
+* Is there an alternate configuration you could use to save money?  
+
+* Can you estimate how a change would impact your cost and performance without putting it into a production system?  
+
+## Purchasing Options with Azure  
+
+There are three main customer types on which the available purchasing options for Azure products and services are contingent:  
+
+* **Enterprise**: Enterprsie customers sign an Enterprise Agreement with Azure that commits them to spend a negotiated amount on Azure services, which they typically pay annually. Enterprise customers also have access to customized Azure pricing.  
+
