@@ -11,7 +11,7 @@ draft: true
 * provides low latency and high throughput  
 * scales up to millions of flows for all TCP nad UDP applications  
 
-
+* Load Balancer distributes 
 
 ## Internal Load Balancer  
 
