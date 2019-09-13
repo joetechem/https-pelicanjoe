@@ -4,6 +4,15 @@ date: 2019-09-13T15:33:45-04:00
 draft: true
 ---
 
+# Azure Load Balancer  
+
+* allows you to scale your applications and create high availability for your services.  
+* Load Balancer supports inbound and outbound scnarios  
+* provides low latency and high throughput  
+* scales up to millions of flows for all TCP nad UDP applications  
+
+
+
 ## Internal Load Balancer  
 
 An Internal Load Blancer differes from a public Load Balancer; in that an internal Load Balancer directs traffic only to resources that are inside a virtual network or use a VPN to access Azure infrastructure, whereas a public load balancer maps the public IP address and port number of incoming traffic to the private IP address and port number of the VM, and vice versa for the response traffic from the VM.  
