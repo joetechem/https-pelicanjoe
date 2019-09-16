@@ -7,9 +7,13 @@ draft: true
 # Azure Load Balancer  
 
 * allows you to scale your applications and create high availability for your services.  
-* Load Balancer supports inbound and outbound scnarios  
+
+* Load Balancer supports inbound and outbound scenarios  
+
 * provides low latency and high throughput  
+
 * scales up to millions of flows for all TCP nad UDP applications  
+
 
 * Load Balancer distributes new inbound flows that arrive on the LB's frontend to backend pool instances, according to rules and health probes.  
 
@@ -33,6 +37,28 @@ draft: true
 Azure provides a suite of fully managed load-balancing solutions for your scenarios. If you are looking for Transport Layer Security (TLS) protocol termination ("SSL offload") or per-HTTP/HTTPS request, application-layer processing, review Application Gateway. If you are looking for global DNS load balancing, review Traffic Manager. Your end-to-end scenarios might benefit from combining these solutions as needed.  
 
 </center>  
+
+## Fundamental Load Balancer Features  
+
+LB provides the following fundamental capabilities for TCP and UDP apps:  
+
+* **Load balancing**:  
+    - create a load-balancing rule to distribute traffic that arrives at frontend to backend pool instances. Load Balancer uses a hash-based algorithm for distribution of inbound flows and rewrites the headers of flows to backend pool instances accordingly. A server is available to receive new flows when a health probe indicates a healthy backend endpoint.  
+
+    - By default, Load Balancer uses a 5-tuple hash composed of source IP address, source port, destination IP address, destination port, and IP protocol number to map flows to available servers. You can choose to create affinity to a specific source IP address by opting into a 2- or 3-tuple hash for a given rule.  
+    - All packets of the same packet flow arrive at the same instance behind the load-balanced front end. When the client initiates a new flow from the same source IP, the source port changes. As a result, the 5-tuple might cause the traffic to fgo to a different backend endpoint.  
+
+<img src="/images/load-balancer-distribution.png" alt="public-and-internal-lbs" style="width: 734px;">  
+
+## Load Balancer Resources  
+
+An LB can exist either as a public LB or an internal LB.  
+
+The LB resource's functions are expressed as a front end, a rule, a health probe, and a backend pool definition. You place VMs into the backend pool by specifying the backend pool from the VM.  
+
+LB resources are objects within which you can express how Azure should program its multi-tenant infrastructure to achieve the scenario that you want to create. There is no direct relationship between Load Balancer resources and actual infrastructure. Creating a Load Blancer doesn't create an instance, and capacity is always available.  
+
+
 
 ## Internal Load Balancer  
 
