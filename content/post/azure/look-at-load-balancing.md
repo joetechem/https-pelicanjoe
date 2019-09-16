@@ -11,7 +11,28 @@ draft: true
 * provides low latency and high throughput  
 * scales up to millions of flows for all TCP nad UDP applications  
 
-* Load Balancer distributes 
+* Load Balancer distributes new inbound flows that arrive on the LB's frontend to backend pool instances, according to rules and health probes.  
+
+* a *public* Load Balancer can provide outbound connections for virtual machines inside your virtual network by translating their private Ip addresses to public IP addresses.  
+
+* Azure Load Balancer is available in two SKUs: Basic and Standard. There are differences in scale, features, and pricing.  
+    - Any scenario that's possible with Basic LB can also be created with Standard LB  
+
+**You can use Azure LB to:**  
+
+* Load-balance incoming internet traffic to your VMs. This configuration is known as a Public Load Balancer.  
+
+* Load-balance traffic across VMs inside a virtual network. You can also reach a Load Balancer front end from an on-premises network in a hybrid scenario. Both scenarios use a configuration that is known as an Internal Load Balancer.  
+
+* Port forward traffic to a specific port on specific VMs with inbound network address translation (NAT) rules.  
+
+* Provide outbound connectivity for VMs inside your virtual network by using a public Load Balancer.  
+
+<center>  
+
+Azure provides a suite of fully managed load-balancing solutions for your scenarios. If you are looking for Transport Layer Security (TLS) protocol termination ("SSL offload") or per-HTTP/HTTPS request, application-layer processing, review Application Gateway. If you are looking for global DNS load balancing, review Traffic Manager. Your end-to-end scenarios might benefit from combining these solutions as needed.  
+
+</center>  
 
 ## Internal Load Balancer  
 
