@@ -39,7 +39,6 @@ Azure provides a suite of fully managed load-balancing solutions for your scenar
 </center>  
 
 ## Fundamental Load Balancer Features  
-
 LB provides the following fundamental capabilities for TCP and UDP apps:  
 
 * **Load balancing**:  
