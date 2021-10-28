@@ -7,8 +7,8 @@ before_script:
 - rm -rf public
 - hugo
 script:
-- aws s3 sync public/ s3://pelicanjoe.com --acl public-read --delete
-- aws cloudfront create-invalidation --distribution-id E363KJJ7DPV9OD --paths '/*'
+- aws s3 sync public/ s3://pelican.wiki --acl public-read --delete
+- aws cloudfront create-invalidation --distribution-id E5TT4J40SYY7B --paths '/*'
 branches:
  only:
  - master
