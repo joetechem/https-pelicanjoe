@@ -7,7 +7,7 @@
 
 Along with a few other *components*. This repository holds content for a static site built with Hugo. The site itself is hosted on Amazon S3.  
 
-Head over to [pelicanjoe.com](https://www.pelicanjoe.com/) to view the deployment results.  
+Head over to [pelican.wiki](https://www.pelicanjoe.com/)(*previously* [pelicanjoe.com](https://www.pelicanjoe.com/)) to view the deployment results.  
 
 
 ### Components: High-Level Overview  
